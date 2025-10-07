@@ -63,11 +63,11 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="group relative overflow-hidden bg-gradient-to-r from-primary via-primary to-secondary hover:from-primary/90 hover:via-secondary hover:to-primary text-primary-foreground font-inter font-medium px-10 py-7 text-lg shadow-[var(--shadow-3d)] transition-all hover:scale-110 hover:shadow-glow before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
+              className="group relative overflow-hidden bg-gradient-to-r from-primary via-primary to-secondary hover:from-primary/90 hover:via-secondary hover:to-primary text-primary-foreground font-inter font-medium px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 lg:py-7 text-sm sm:text-base md:text-lg shadow-[var(--shadow-3d)] transition-all hover:scale-105 sm:hover:scale-110 hover:shadow-glow before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 whitespace-normal sm:whitespace-nowrap text-center"
               style={{ backgroundSize: '200% auto' }}
             >
-              <Heart className="w-5 h-5 inline mr-2 group-hover:animate-bounce" />
-              Kostenloses Erstgespräch buchen
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5 inline mr-1 sm:mr-2 group-hover:animate-bounce flex-shrink-0" />
+              <span className="block sm:inline">Kostenloses Erstgespräch buchen</span>
             </Button>
           </div>
         </div>
