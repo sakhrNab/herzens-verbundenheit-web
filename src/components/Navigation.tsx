@@ -11,7 +11,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-soft">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -27,19 +27,19 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('philosophie')}
-              className="font-inter text-foreground hover:text-primary transition-colors"
+              className="font-inter text-foreground hover:text-primary transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Philosophie
             </button>
             <button
               onClick={() => scrollToSection('leistungen')}
-              className="font-inter text-foreground hover:text-primary transition-colors"
+              className="font-inter text-foreground hover:text-primary transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Leistungen
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
-              className="font-inter text-foreground hover:text-primary transition-colors"
+              className="font-inter text-foreground hover:text-primary transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Erfahrungen
             </button>

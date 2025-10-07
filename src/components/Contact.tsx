@@ -40,7 +40,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="border-border">
+          <Card className="border-border/50 bg-card/60 backdrop-blur-sm">
             <CardContent className="p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -103,7 +103,7 @@ const Contact = () => {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-6"
+                  className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-medium py-6 transition-all hover:shadow-glow"
                 >
                   Nachricht senden
                 </Button>
@@ -113,7 +113,7 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <Card className="border-border">
+            <Card className="border-border/50 bg-card/60 backdrop-blur-sm hover:shadow-soft transition-all duration-300">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -134,7 +134,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-border">
+            <Card className="border-border/50 bg-card/60 backdrop-blur-sm hover:shadow-soft transition-all duration-300">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -155,7 +155,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-border">
+            <Card className="border-border/50 bg-card/60 backdrop-blur-sm hover:shadow-soft transition-all duration-300">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
