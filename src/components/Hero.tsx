@@ -42,7 +42,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-        <div className="backdrop-blur-2xl bg-background/30 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto border border-white/30 shadow-[var(--shadow-3d)] hover:scale-[1.02] transition-transform duration-700">
+        <div className="hover:backdrop-blur-xl bg-background/30 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto border border-white/30 shadow-[var(--shadow-3d)] hover:scale-[1.02] transition-all duration-700">
           <div className="animate-scale-in">
             <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
               Gemeinsam zu mehr
