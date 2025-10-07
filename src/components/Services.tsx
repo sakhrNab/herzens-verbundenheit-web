@@ -1,5 +1,6 @@
 import { Heart, MessageCircle, Users, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
   {
@@ -29,9 +30,14 @@ const services = [
 ];
 
 const Services = () => {
+  const { elementRef, isVisible } = useScrollReveal();
+
   return (
-    <section id="leistungen" className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="leistungen" className="py-16 md:py-24 bg-background relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-[var(--gradient-mesh)] opacity-30"></div>
+      
+      <div className="container mx-auto px-4 relative z-10" ref={elementRef}>
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-playfair text-3xl md:text-5xl font-bold text-foreground mb-6">
             Unsere Leistungen
@@ -46,19 +52,29 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const delay = index * 0.1;
             return (
               <Card
                 key={index}
-                className="border-border hover:shadow-warm transition-all duration-500 hover:-translate-y-2 hover:shadow-glow group cursor-pointer bg-card/50 backdrop-blur-sm"
+                className={`border-border/50 hover:shadow-[var(--shadow-3d)] transition-all duration-700 hover:-translate-y-3 hover:rotate-1 group cursor-pointer bg-card/40 backdrop-blur-lg relative overflow-hidden ${
+                  isVisible ? 'animate-scale-in' : 'opacity-0'
+                }`}
+                style={{ 
+                  animationDelay: `${delay}s`,
+                  transform: 'perspective(1000px)'
+                }}
               >
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                    <Icon className="w-7 h-7 text-primary transition-all duration-500 group-hover:scale-110" />
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                
+                <CardContent className="p-6 md:p-8 relative">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mb-4 transition-all duration-700 group-hover:scale-125 group-hover:rotate-12 shadow-lg group-hover:shadow-[var(--shadow-glow)]">
+                    <Icon className="w-8 h-8 text-primary transition-all duration-700 group-hover:scale-110" />
                   </div>
-                  <h3 className="font-playfair text-xl md:text-2xl font-semibold text-foreground mb-3">
+                  <h3 className="font-playfair text-xl md:text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="font-inter text-muted-foreground leading-relaxed">
+                  <p className="font-inter text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {service.description}
                   </p>
                 </CardContent>
