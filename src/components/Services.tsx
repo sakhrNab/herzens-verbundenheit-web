@@ -49,11 +49,11 @@ const Services = () => {
             return (
               <Card
                 key={index}
-                className="border-border hover:shadow-warm transition-all duration-300 hover:-translate-y-1"
+                className="border-border hover:shadow-warm transition-all duration-500 hover:-translate-y-2 hover:shadow-glow group cursor-pointer bg-card/50 backdrop-blur-sm"
               >
                 <CardContent className="p-6 md:p-8">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                    <Icon className="w-7 h-7 text-primary transition-all duration-500 group-hover:scale-110" />
                   </div>
                   <h3 className="font-playfair text-xl md:text-2xl font-semibold text-foreground mb-3">
                     {service.title}
